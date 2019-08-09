@@ -25,7 +25,4 @@ public class Lesson {
 
     private String name;
 
-    @ManyToMany
-    private Set<Student> students = new HashSet<>();
-
 }

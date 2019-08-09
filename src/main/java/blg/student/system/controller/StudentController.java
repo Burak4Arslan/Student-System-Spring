@@ -28,6 +28,16 @@ public class StudentController {
         return studentService.save(student);
     }
 
+    @PutMapping("/student/{id}")
+    public Student putStudent(@PathVariable Long id,@RequestBody Student student){
+        return studentService.changeStudentInformationById(id,student);
+    }
+
+    @PutMapping("/student/{sid}/lesson/{lid}")
+    public Student putLessonToStudent(@PathVariable Long sid,@PathVariable Long lid){
+        return studentService.putLessonToStudent(sid,lid);
+    }
+
     @DeleteMapping("/student/{id}")
     public void deleteStudent(@PathVariable Long id) {
         studentService.deleteById(id);

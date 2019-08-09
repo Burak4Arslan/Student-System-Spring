@@ -9,4 +9,6 @@ public interface StudentService {
     public Student save(Student student);
     public void deleteById(Long id);
     public Student findById(Long id);
+    public Student changeStudentInformationById(Long id,Student student);
+    public Student putLessonToStudent(Long sid,Long lid);
 }
