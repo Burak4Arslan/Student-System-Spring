@@ -13,7 +13,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,6 +22,22 @@ public class Student {
     private Long id;
     private String name;
     private String surname;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public Set<Lesson> getLessons() {
+        return lessons;
+    }
 
     @ManyToMany
     private Set<Lesson> lessons = new HashSet<>();

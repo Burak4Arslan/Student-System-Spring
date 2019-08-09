@@ -5,6 +5,7 @@ import blg.student.system.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class StudentController {
@@ -15,12 +16,22 @@ public class StudentController {
     }
 
     @GetMapping("/students")
-    public List<Student> getStudent(){
+    public List<Student> getStudents(){
         return studentService.findAll();
+    }
+
+    @GetMapping("/student/{id}")
+    public Student getStudent(@PathVariable Long id){
+        return studentService.findById(id);
     }
 
     @PostMapping("/student")
     public Student postStudent(@RequestBody final Student student){
         return studentService.save(student);
+    }
+
+    @DeleteMapping("/student/{id}")
+    public void deleteStudent(@PathVariable Long id) {
+        studentService.deleteById(id);
     }
 }
