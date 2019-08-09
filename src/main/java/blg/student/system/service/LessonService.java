@@ -9,4 +9,5 @@ public interface LessonService {
     public Lesson save(Lesson lesson);
     public void deleteById(Long id);
     public Lesson findById(Long id);
+    public Lesson changeLessonInformationById(Long id,Lesson lesson);
 }

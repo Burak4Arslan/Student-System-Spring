@@ -29,6 +29,11 @@ public class LessonController {
         return lessonService.save(lesson);
     }
 
+    @PutMapping("/lesson/{id}")
+    public Lesson updateLesson(@PathVariable Long id,@RequestBody Lesson lesson){
+        return lessonService.changeLessonInformationById(id,lesson);
+    }
+
     @DeleteMapping("/lesson/{id}")
     public void deleteLesson(@PathVariable Long id){
         lessonService.deleteById(id);

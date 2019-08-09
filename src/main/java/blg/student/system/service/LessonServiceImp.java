@@ -35,4 +35,14 @@ public class LessonServiceImp implements LessonService{
         Lesson myLesson = lessonRepository.findById(id).get();
         return myLesson;
     }
+
+    @Override
+    public Lesson changeLessonInformationById(Long id,Lesson lesson) {
+        Lesson myLesson = lessonRepository.findById(id).get();
+        myLesson.setName(lesson.getName());
+        lessonRepository.save(myLesson);
+        return myLesson;
+    }
+
+
 }
