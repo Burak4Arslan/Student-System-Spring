@@ -5,8 +5,6 @@ import blg.student.system.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
-
 @RestController
 public class StudentController {
     private final StudentService studentService;

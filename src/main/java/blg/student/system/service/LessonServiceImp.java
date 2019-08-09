@@ -24,4 +24,15 @@ public class LessonServiceImp implements LessonService{
     public Lesson save(Lesson lesson) {
         return lessonRepository.save(lesson);
     }
+
+    @Override
+    public void deleteById(Long id) {
+        lessonRepository.deleteById(id);
+    }
+
+    @Override
+    public Lesson findById(Long id) {
+        Lesson myLesson = lessonRepository.findById(id).get();
+        return myLesson;
+    }
 }

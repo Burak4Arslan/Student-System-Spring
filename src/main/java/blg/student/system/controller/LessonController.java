@@ -19,8 +19,18 @@ public class LessonController {
         return lessonService.findAll();
     }
 
+    @GetMapping("/lesson/{id}")
+    public Lesson getLesson(@PathVariable Long id){
+        return lessonService.findById(id);
+    }
+
     @PostMapping("/lesson")
     public Lesson postLesson(@RequestBody final Lesson lesson){
         return lessonService.save(lesson);
+    }
+
+    @DeleteMapping("/lesson/{id}")
+    public void deleteLesson(@PathVariable Long id){
+        lessonService.deleteById(id);
     }
 }
