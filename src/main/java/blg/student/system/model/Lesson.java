@@ -17,14 +17,15 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Student {
+public class Lesson {
+
     @Id
     @GeneratedValue
     private Long id;
+
     private String name;
-    private String surname;
 
     @ManyToMany
-    private Set<Lesson> lessons = new HashSet<>();
+    private Set<Student> students = new HashSet<>();
 
 }

@@ -2,7 +2,6 @@ package blg.student.system.controller;
 
 import blg.student.system.model.Student;
 import blg.student.system.service.StudentService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
