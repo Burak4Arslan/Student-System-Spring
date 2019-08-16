@@ -1,14 +1,9 @@
-package blg.student.system.model;
+package blg.student.system.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,6 +16,9 @@ public class Student {
     private Long id;
     private String name;
     private String surname;
+
+    @ManyToMany
+    private Set<Lesson> lessons = new HashSet<>();
 
     public void setName(String name) {
         this.name = name;
@@ -49,8 +47,5 @@ public class Student {
     public Set<Lesson> getLessons() {
         return lessons;
     }
-
-    @ManyToMany
-    private Set<Lesson> lessons = new HashSet<>();
 
 }

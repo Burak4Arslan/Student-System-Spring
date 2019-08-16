@@ -1,6 +1,6 @@
 package blg.student.system.service;
 
-import blg.student.system.model.Lesson;
+import blg.student.system.entity.Lesson;
 import blg.student.system.repository.LessonRepository;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
 package blg.student.system.service;
 
-import blg.student.system.model.Student;
+import blg.student.system.entity.Student;
 
 import java.util.List;
 

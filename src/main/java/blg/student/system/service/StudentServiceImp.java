@@ -1,7 +1,7 @@
 package blg.student.system.service;
 
-import blg.student.system.model.Lesson;
-import blg.student.system.model.Student;
+import blg.student.system.entity.Lesson;
+import blg.student.system.entity.Student;
 import blg.student.system.repository.LessonRepository;
 import blg.student.system.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,10 +43,6 @@ public class StudentServiceImp implements StudentService {
     @Override
     public Student findById(Long id) {
         Student myStudent = studentRepository.findById(id).get();
-        /*System.out.println(myStudent.getId());
-        System.out.println(myStudent.getName());
-        System.out.println(myStudent.getSurname());
-        System.out.println(myStudent.getLessons());*/
         return myStudent;
     }
 
@@ -56,7 +52,6 @@ public class StudentServiceImp implements StudentService {
         Student myStudent = studentRepository.findById(id).get();
         myStudent.setName(student.getName());
         myStudent.setSurname(student.getSurname());
-        myStudent.setLessons(student.getLessons());
         studentRepository.save(myStudent);
         return myStudent;
     }
