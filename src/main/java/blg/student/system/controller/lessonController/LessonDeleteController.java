@@ -1,12 +1,12 @@
 package blg.student.system.controller.lessonController;
 
-import blg.student.system.entity.Lesson;
 import blg.student.system.service.LessonService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.transaction.Transactional;
 
 @CrossOrigin(origins = "*")
+@Transactional
 @RestController
 public class LessonDeleteController {
 
@@ -16,8 +16,8 @@ public class LessonDeleteController {
         this.lessonService = lessonService;
     }
 
-    @DeleteMapping("/lesson/{id}")
-    public void deleteLesson(@PathVariable Long id){
-        lessonService.deleteById(id);
+    @DeleteMapping("/lessons")
+    public void deleteLesson(@RequestParam String lessonCode){
+        lessonService.deleteByLessonCode(lessonCode);
     }
 }

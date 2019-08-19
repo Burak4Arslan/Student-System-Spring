@@ -24,10 +24,9 @@ public class LessonGetController {
         return lessonService.findAll();
     }
 
-    @GetMapping("/lesson/{id}")
-    public Lesson getLesson(@PathVariable Long id){
-        return lessonService.findById(id);
+    @GetMapping("/lesson/{studentNumber}")
+    public Lesson getLesson(@PathVariable String studentNumber){
+        return lessonService.findByLessonCode(studentNumber);
     }
-
 
 }

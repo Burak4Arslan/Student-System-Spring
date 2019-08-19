@@ -19,9 +19,8 @@ public class StudentPutController {
         return studentService.changeStudentInformationById(id,student);
     }
 
-    @PutMapping("/student/{sid}/lesson/{lid}")
-    public Student putLessonToStudent(@PathVariable Long sid,@PathVariable Long lid){
-        return studentService.putLessonToStudent(sid,lid);
+    @PutMapping("/students")
+    public Student putLessonToStudent(@RequestParam String studentNumber,@RequestParam String lessonCode){
+        return studentService.putLessonToStudent(studentNumber,lessonCode);
     }
-
 }

@@ -16,8 +16,11 @@ public class Student {
     private Long id;
     private String name;
     private String surname;
+    @Column(unique = true)
+    private String studentNumber;
 
     @ManyToMany
+    @JoinTable
     private Set<Lesson> lessons = new HashSet<>();
 
     public void setName(String name) {
@@ -28,10 +31,6 @@ public class Student {
         this.surname = surname;
     }
 
-    public void setLessons(Set<Lesson> lessons) {
-        this.lessons = lessons;
-    }
-
     public Long getId() {
         return id;
     }
@@ -40,12 +39,23 @@ public class Student {
         return name;
     }
 
-    public String getSurname() {
-        return surname;
-    }
-
     public Set<Lesson> getLessons() {
         return lessons;
     }
 
+    public void setLessons(Set<Lesson> lessons) {
+        this.lessons = lessons;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public String getStudentNumber() {
+        return studentNumber;
+    }
+
+    public void setStudentNumber(String studentNumber) {
+        this.studentNumber = studentNumber;
+    }
 }

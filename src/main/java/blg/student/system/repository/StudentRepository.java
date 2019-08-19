@@ -4,4 +4,6 @@ import blg.student.system.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
+    Student findByStudentNumber(String studentNumber);
+    void deleteByStudentNumber(String studentNumber);
 }

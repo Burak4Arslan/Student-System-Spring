@@ -4,4 +4,6 @@ import blg.student.system.entity.Lesson;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LessonRepository extends JpaRepository<Lesson,Long> {
+    Lesson findByLessonCode(String lessonCode);
+    void deleteByLessonCode(String lessonCode);
 }

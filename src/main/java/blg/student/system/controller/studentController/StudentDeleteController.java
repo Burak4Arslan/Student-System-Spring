@@ -4,7 +4,10 @@ import blg.student.system.entity.Student;
 import blg.student.system.service.StudentService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+
 @CrossOrigin(origins = "*")
+@Transactional
 @RestController
 public class StudentDeleteController {
 
@@ -14,9 +17,9 @@ public class StudentDeleteController {
         this.studentService = studentService;
     }
 
-    @DeleteMapping("/student/{id}")
-    public void deleteStudent(@PathVariable Long id) {
-        studentService.deleteById(id);
+    @DeleteMapping("/students")
+    public void deleteStudent(@RequestParam String studentNumber) {
+        studentService.deleteByStudentNumber(studentNumber);
     }
 
 }

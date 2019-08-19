@@ -36,14 +36,13 @@ public class StudentServiceImp implements StudentService {
     }
 
     @Override
-    public void deleteById(Long id) {
-        studentRepository.deleteById(id);
+    public void deleteByStudentNumber(String studentNumber) {
+        studentRepository.deleteByStudentNumber(studentNumber);
     }
 
     @Override
-    public Student findById(Long id) {
-        Student myStudent = studentRepository.findById(id).get();
-        return myStudent;
+    public Student findByStudentNumber(String studentNumber) {
+        return studentRepository.findByStudentNumber(studentNumber);
     }
 
     @Override
@@ -57,11 +56,10 @@ public class StudentServiceImp implements StudentService {
     }
 
     @Override
-    public Student putLessonToStudent(Long sid, Long lid) {
+    public Student putLessonToStudent(String studentNumber, String lessonCode) {
 
-        Student student = studentRepository.findById(sid).get();
-        Lesson lesson = lessonRepository.findById(lid).get();
-
+        Student student = studentRepository.findByStudentNumber(studentNumber);
+        Lesson lesson = lessonRepository.findByLessonCode(lessonCode);
         student.getLessons().add(lesson);
         studentRepository.save(student);
         return student;

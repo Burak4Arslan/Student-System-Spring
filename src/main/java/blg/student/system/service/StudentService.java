@@ -7,8 +7,8 @@ import java.util.List;
 public interface StudentService {
     public List<Student> findAll();
     public Student save(Student student);
-    public void deleteById(Long id);
-    public Student findById(Long id);
+    public void deleteByStudentNumber(String studentNumber);
+    public Student findByStudentNumber(String studentNumber);
     public Student changeStudentInformationById(Long id,Student student);
-    public Student putLessonToStudent(Long sid,Long lid);
+    public Student putLessonToStudent(String studentNumber,String lessonCode);
 }

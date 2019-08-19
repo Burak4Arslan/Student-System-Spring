@@ -4,8 +4,6 @@ import blg.student.system.entity.Lesson;
 import blg.student.system.service.LessonService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @CrossOrigin(origins = "*")
 @RestController
 public class LessonPostController {
@@ -16,7 +14,7 @@ public class LessonPostController {
         this.lessonService = lessonService;
     }
 
-    @PostMapping("/lesson")
+    @PostMapping("/lessons")
     public Lesson postLesson(@RequestBody final Lesson lesson){
         return lessonService.save(lesson);
     }

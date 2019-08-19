@@ -25,8 +25,8 @@ public class StudentGetController {
     }
 
     @GetMapping("/student/{id}")
-    public Student getStudent(@PathVariable Long id){
-        return studentService.findById(id);
+    public Student getStudent(@PathVariable String studentNumber){
+        return studentService.findByStudentNumber(studentNumber);
     }
 
 }
